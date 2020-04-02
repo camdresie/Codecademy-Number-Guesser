@@ -7,13 +7,12 @@ const generateTarget = () => {
   return Math.floor(Math.random() * 10);
 };
 const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
-   Math.abs(targetGuess - humanGuess)
-    if (Math.abs((targetGuess - humanGuess)) > (Math.abs(targetGuess - computerGuess))) {
+    if ((Math.abs(targetGuess - humanGuess)) > (Math.abs(targetGuess - computerGuess))) {
       return false;
+    } else if ((Math.abs(targetGuess - computerGuess)) > (Math.abs(targetGuess - humanGuess))) {
+        return true;
     } else if (humanGuess === computerGuess) {
         return true;
-    } else {
-        return false;
     }
 };
 const updateScore = (winner) => {
